@@ -141,3 +141,34 @@ When delegation is used, outputs should include:
 - result per subagent
 - merged final outcome
 
+
+---
+
+## Acknowledgements
+
+SuperClaw is built from adapted ideas, patterns, and references from these repositories:
+
+1. **Everything Claude Code (ECC)**  
+   https://github.com/affaan-m/everything-claude-code
+
+2. **agency-agents**  
+   https://github.com/msitarzewski/agency-agents
+
+3. **claude-skills**  
+   https://github.com/alirezarezvani/claude-skills
+
+4. **anthropics/skills**  
+   https://github.com/anthropics/skills
+
+We deeply appreciate the original authors and maintainers for publishing these resources.
+
+Traceability and attribution files in this repo:
+- `upstream/NOTICE`
+- `upstream/SOURCE_PIN.txt`
+- `upstream-import/agency-agents/SOURCE_PIN.txt`
+- `upstream-import/agency-agents/NOTICE.md`
+- `upstream-import/claude-skills/SOURCE_PIN.txt`
+- `upstream-import/claude-skills/NOTICE.md`
+- `upstream-import/anthropic-skills/SOURCE_PIN.txt`
+- `upstream-import/anthropic-skills/NOTICE.md`
+
