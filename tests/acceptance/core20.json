@@ -1,0 +1,25 @@
+{
+  "suite": "core20",
+  "skills": [
+    "ecc-cmd-plan",
+    "ecc-cmd-verify",
+    "ecc-cmd-quality-gate",
+    "ecc-security-review",
+    "ecc-security-scan",
+    "ecc-cmd-code-review",
+    "ecc-cmd-tdd",
+    "ecc-cmd-eval",
+    "ecc-cmd-checkpoint",
+    "ecc-cmd-orchestrate",
+    "ecc-cmd-loop-start",
+    "ecc-cmd-loop-status",
+    "ecc-cmd-model-route",
+    "ecc-cmd-multi-plan",
+    "ecc-cmd-multi-execute",
+    "ecc-cmd-multi-workflow",
+    "ecc-cmd-pm2",
+    "ecc-cmd-build-fix",
+    "ecc-cmd-test-coverage",
+    "ecc-cmd-update-docs"
+  ]
+}

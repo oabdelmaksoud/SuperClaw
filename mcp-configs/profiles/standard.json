@@ -1,0 +1,8 @@
+{
+  "profile": "standard",
+  "mcpServers": {
+    "memory": {"command":"npx","args":["-y","@modelcontextprotocol/server-memory"],"description":"Session memory"},
+    "github": {"command":"npx","args":["-y","@modelcontextprotocol/server-github"],"env":{"GITHUB_PERSONAL_ACCESS_TOKEN":"${GITHUB_PERSONAL_ACCESS_TOKEN}"},"description":"GitHub ops"},
+    "filesystem": {"command":"npx","args":["-y","@modelcontextprotocol/server-filesystem","/path/to/workspace"],"description":"Scoped filesystem"}
+  }
+}

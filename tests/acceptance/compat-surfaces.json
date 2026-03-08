@@ -1,0 +1,10 @@
+{
+  "suite": "compat-surfaces",
+  "checks": [
+    "docs-compat-present",
+    "harness-translation-matrix-present",
+    "examples-compat-present",
+    "assets-manifest-present",
+    "runtime-smoke-script-pass"
+  ]
+}

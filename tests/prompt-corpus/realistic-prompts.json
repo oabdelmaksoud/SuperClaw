@@ -1,0 +1,19 @@
+{
+  "samples": [
+    {"prompt":"Plan a migration from SQLite to Postgres with rollback strategy","expected":"ecc-cmd-plan"},
+    {"prompt":"Run a pre-PR verification on this repo","expected":"ecc-cmd-verify"},
+    {"prompt":"Do a strict quality gate with fixes","expected":"ecc-cmd-quality-gate"},
+    {"prompt":"Review this diff and list blockers","expected":"ecc-cmd-code-review"},
+    {"prompt":"Set up a red-green-refactor cycle for this bug","expected":"ecc-cmd-tdd"},
+    {"prompt":"Scan this project for security issues","expected":"ecc-security-scan"},
+    {"prompt":"I need a checkpoint update for handoff","expected":"ecc-cmd-checkpoint"},
+    {"prompt":"Coordinate backend/frontend tasks with dependencies","expected":"ecc-cmd-orchestrate"},
+    {"prompt":"Start a bounded loop for iterative fixes","expected":"ecc-cmd-loop-start"},
+    {"prompt":"Recommend model routing for fast cheap QA vs deep reviews","expected":"ecc-cmd-model-route"},
+    {"prompt":"Run go build checks and fix failures","expected":"ecc-cmd-go-build"},
+    {"prompt":"Improve test coverage for critical paths","expected":"ecc-cmd-test-coverage"},
+    {"prompt":"Update docs to match current implementation","expected":"ecc-cmd-update-docs"},
+    {"prompt":"Give me a Python code quality review","expected":"ecc-cmd-python-review"},
+    {"prompt":"Manage PM2 restart and show status","expected":"ecc-cmd-pm2"}
+  ]
+}

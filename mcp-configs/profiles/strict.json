@@ -1,0 +1,7 @@
+{
+  "profile": "strict",
+  "mcpServers": {
+    "memory": {"command":"npx","args":["-y","@modelcontextprotocol/server-memory"],"description":"Session memory"}
+  },
+  "policy": {"notes":"Enable only required servers; prefer explicit env vars and scoped paths."}
+}

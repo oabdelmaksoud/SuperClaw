@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Package Manager Preference",
+  "type": "object",
+  "properties": {
+    "packageManager": {
+      "type": "string",
+      "enum": ["npm", "pnpm", "yarn", "bun"]
+    },
+    "setAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["packageManager"],
+  "additionalProperties": false
+}

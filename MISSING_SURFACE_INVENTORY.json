@@ -1,0 +1,19 @@
+{
+  "upstream_files": 795,
+  "port_files": 320,
+  "missing_files": 624,
+  "buckets": {
+    "skip-or-archive-harness-specific": 153,
+    "review-manually": 71,
+    "skip-buildpack-infra-or-archive": 9,
+    "port-governance-selectively": 5,
+    "port-docs-selectively": 347,
+    "port-secondary-assets": 22,
+    "adapt-priority-contexts": 3,
+    "port-secondary-examples": 7,
+    "adapt-priority-hooks": 2,
+    "adapt-priority-mcp-configs": 1,
+    "adapt-secondary-plugins": 1,
+    "adapt-priority-schemas": 3
+  }
+}

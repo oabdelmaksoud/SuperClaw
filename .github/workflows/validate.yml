@@ -1,0 +1,16 @@
+name: validate
+on:
+  pull_request:
+  push:
+    branches: [ main, master ]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bootstrap validation
+        run: bash scripts/port-check.sh
+      - name: Skill validation
+        run: bash scripts/validate-skills.sh
+      - name: Schema validation
+        run: bash scripts/validate-schemas.sh

@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/hooks.schema.json",
+  "profile": "standard",
+  "events": {
+    "SessionStart": [
+      {"id": "session:start:context-load", "intent": "hydrate context", "mappedAction": "load contexts/*"},
+      {"id": "session:start:pm-detect", "intent": "detect package manager", "mappedAction": "scripts/setup-package-manager-equivalent"}
+    ],
+    "PreToolUse": [
+      {"id": "pre:bash:long-run-reminder", "intent": "warn for long jobs", "mappedAction": "non-blocking reminder"},
+      {"id": "pre:write:doc-path-warning", "intent": "warn non-standard doc paths", "mappedAction": "non-blocking warning"}
+    ],
+    "PostToolUse": [
+      {"id": "post:quality-gate", "intent": "post-edit quality checks", "mappedAction": "scripts/run-quality-gate.sh"},
+      {"id": "post:build-analysis", "intent": "analyze build outputs", "mappedAction": "async advisory"}
+    ],
+    "Stop": [
+      {"id": "stop:checkpoint", "intent": "checkpoint summary", "mappedAction": "ecc-cmd-checkpoint style output"},
+      {"id": "stop:cost-marker", "intent": "light telemetry", "mappedAction": "session marker"}
+    ],
+    "SessionEnd": [
+      {"id": "session:end:marker", "intent": "session closure marker", "mappedAction": "non-blocking marker"}
+    ]
+  }
+}

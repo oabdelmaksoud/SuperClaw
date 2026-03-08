@@ -1,0 +1,13 @@
+{
+  "upstream_files_scanned": 795,
+  "port_files_scanned": 345,
+  "missing_after_transform_and_adapt": 615,
+  "bucket_counts": {
+    "assets": 22,
+    "docs/guides": 347,
+    "examples": 7,
+    "harness-specific": 153,
+    "other": 85,
+    "plugins": 1
+  }
+}
