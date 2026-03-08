@@ -1,54 +1,58 @@
 # SuperClaw
 
-SuperClaw is an OpenClaw-native compatibility pack that brings high-value workflow patterns from **Everything Claude Code (ECC)** into a reusable OpenClaw setup.
+> OpenClaw-native ECC compatibility pack.
 
-> **Acknowledgement:** This project is deeply inspired by and adapted from [`affaan-m/everything-claude-code`](https://github.com/affaan-m/everything-claude-code). See `upstream/NOTICE` and `upstream/SOURCE_PIN.txt` for attribution and source pinning.
+SuperClaw brings the strongest operational patterns from [Everything Claude Code (ECC)](https://github.com/affaan-m/everything-claude-code) into an OpenClaw-first architecture.
 
----
-
-## What SuperClaw Includes
-
-- **121 ECC-derived OpenClaw skills**
-  - command skills (`ecc-cmd-*`)
-  - role skills (`ecc-role-*`)
-  - domain skills (`ecc-*`)
-- **OpenClaw-compatible runtime layers**
-  - contexts (`contexts/`)
-  - hook intent mapping (`hooks/`)
-  - MCP profiles via mcporter (`mcp-configs/`)
-  - schemas (`schemas/`)
-- **Validation + operations scripts**
-  - verify / quality gate / security scan / eval
-  - acceptance runners
-  - compatibility smoke runners
-  - install wizard
+It is designed for people who want ECC-style planning, verification, security discipline, orchestration, and role specialization — **without depending on ECC’s harness-specific internals**.
 
 ---
 
-## Why this exists
+## Acknowledgement
 
-ECC contains strong operational patterns (planning, verification, security discipline, orchestration). SuperClaw translates those patterns into **OpenClaw-native behavior** instead of trying to clone harness-specific internals 1:1.
+SuperClaw is inspired by and adapted from:
+- `affaan-m/everything-claude-code`
 
-This gives you practical compatibility where it matters:
-- same workflow intent
-- OpenClaw tooling and execution model
-- reproducible checks and reports
+Attribution/source metadata:
+- `upstream/NOTICE`
+- `upstream/SOURCE_PIN.txt`
+- `LICENSE.upstream`
 
 ---
 
-## Install (Recommended)
+## What you get
+
+### 1) ECC-derived OpenClaw skills
+- **121 skills total**
+  - `ecc-cmd-*` command workflows
+  - `ecc-role-*` role-specialized workflows
+  - `ecc-*` domain/workflow patterns
+
+### 2) Runtime compatibility assets
+- `contexts/` (dev/research/review modes)
+- `hooks/` (hook-intent mapping for OpenClaw workflows)
+- `mcp-configs/` (mcporter MCP profiles)
+- `schemas/` (validation schemas)
+
+### 3) Validation and operations tooling
+- install wizard
+- smoke/acceptance runners
+- verify / quality-gate / security-scan / eval scripts
+- upstream sync + compatibility audits
+
+---
+
+## Quick start (recommended)
 
 ```bash
+git clone https://github.com/oabdelmaksoud/SuperClaw.git
+cd SuperClaw
 bash scripts/install-wizard.sh
 ```
 
-The wizard can:
-- install skills globally to `~/.openclaw/skills`
-- sync runtime assets to `~/.openclaw/ecc-runtime`
-- apply MCP profile through mcporter
-- run quick validation checks
+Then in OpenClaw, start a fresh session (`/new`) to refresh skill discovery.
 
-### Non-interactive mode
+### Non-interactive install
 
 ```bash
 NONINTERACTIVE=1 bash scripts/install-wizard.sh
@@ -56,21 +60,23 @@ NONINTERACTIVE=1 bash scripts/install-wizard.sh
 
 ---
 
-## Manual Install
+## Manual install
 
 ```bash
+# 1) skills
 mkdir -p ~/.openclaw/skills
 rsync -a --delete skills/ ~/.openclaw/skills/
 
+# 2) runtime compatibility assets
 bash scripts/integrate-openclaw-runtime.sh
+
+# 3) MCP profile (mcporter)
 bash scripts/apply-mcporter-profile.sh standard
 ```
 
-Then start a new OpenClaw session (`/new`) to refresh skill discovery.
-
 ---
 
-## Validate Installation
+## Validate your installation
 
 ```bash
 openclaw skills info ecc-cmd-plan
@@ -78,43 +84,96 @@ bash scripts/run-compat-smoke.sh
 bash scripts/run-compat-acceptance.sh
 ```
 
----
+### Optional deeper checks
 
-## Project Structure
-
-- `skills/` — OpenClaw-compatible ECC skill pack
-- `scripts/` — install, validation, and compatibility tooling
-- `contexts/`, `hooks/`, `mcp-configs/`, `schemas/` — runtime compatibility assets
-- `tests/acceptance/` — scenario/acceptance suites (core20/core60/core95/compat)
-- `tests/regression/` — baseline snapshots
-- `upstream/` — attribution/source sync metadata
-- `upstream-import/` and `upstream-archive/` — selective imports + archived harness-specific surfaces
+```bash
+bash scripts/run-acceptance.sh tests/acceptance/core95.json
+bash scripts/run-agent-scenarios.sh AGENT_SCENARIO_MATRIX.md
+```
 
 ---
 
-## Compatibility Philosophy
+## How compatibility is implemented
 
-SuperClaw targets **behavioral compatibility** with ECC patterns in OpenClaw.
+SuperClaw follows **behavioral compatibility** rather than byte-for-byte harness cloning.
 
-- ✅ Port/adapt: skills, workflow commands, role behaviors, rules intent, hook intent, MCP profiles
-- ⚠️ Archive/skip by default: harness-locked internals (`.claude`, `.cursor`, `.codex`, `.opencode`, etc.)
+| ECC surface | SuperClaw strategy |
+|---|---|
+| Commands | Ported as `ecc-cmd-*` OpenClaw skills |
+| Agents | Ported as `ecc-role-*` role skills |
+| Rules | Ported as OpenClaw references + validation |
+| Hooks | Adapted into OpenClaw hook-intent + script workflows |
+| MCP configs | Adapted into mcporter profile system |
+| Harness internals (`.claude/.cursor/.codex/...`) | archived/selectively adapted |
 
-See:
+Key docs:
 - `COMPATIBILITY.md`
 - `COMPATIBILITY_CLOSURE_MATRIX.md`
 - `HARNESS_TRANSLATION_MATRIX.md`
+- `RUNTIME_INTEGRATION.md`
+
+---
+
+## Repository layout
+
+- `skills/` — primary OpenClaw skill pack
+- `scripts/` — installers, checks, scenario runners
+- `contexts/`, `hooks/`, `mcp-configs/`, `schemas/` — runtime layers
+- `tests/acceptance/` — core20/core60/core95 + compat suites
+- `tests/regression/` — baseline snapshots
+- `upstream/` — source pin + attribution
+- `upstream-import/` — selective docs/examples imports
+- `upstream-archive/` — archived harness-specific references
+
+---
+
+## Tested scenarios (high level)
+
+SuperClaw includes scenario-based validation reports for:
+- E2E workflow scenarios
+- hooks + role-agent scenarios
+- delegated subagent scenarios
+- compatibility acceptance suites
+
+Reference reports:
+- `SCENARIO_E2E_VALIDATION.md`
+- `HOOKS_AGENTS_TEST_REPORT.md`
+- `AGENT_SCENARIO_MATRIX.md`
+- `SUBAGENT_DELEGATION_TEST_REPORT.md`
+- `COMPAT_VALIDATION_REPORT.md`
+
+---
+
+## Known limitations
+
+- Harness-specific internals are not 1:1 executed in OpenClaw runtime.
+- Full “certified” status still benefits from clean-machine and non-author user validation runs.
+- Some optional docs/assets are selectively imported rather than fully mirrored.
+
+---
+
+## Contributing
+
+Contributions are welcome. Preferred workflow:
+1. Open an issue with proposed change scope.
+2. Keep changes OpenClaw-native (avoid reintroducing harness lock-in).
+3. Run compatibility checks before PR:
+   ```bash
+   bash scripts/run-compat-smoke.sh
+   bash scripts/run-compat-acceptance.sh
+   ```
 
 ---
 
 ## Credits
 
-- Original concept and source patterns: **Everything Claude Code** by @affaan-m
-- SuperClaw adaptation and OpenClaw integration: this repository
+- Upstream source patterns: **Everything Claude Code** by @affaan-m
+- OpenClaw compatibility adaptation: **SuperClaw**
 
 ---
 
-## License & Attribution
+## License
 
-Use in accordance with upstream and local licensing/attribution files:
-- `upstream/NOTICE`
+See:
 - `LICENSE.upstream`
+- `upstream/NOTICE`
