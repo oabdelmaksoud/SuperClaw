@@ -1,0 +1,3 @@
+repo: https://github.com/anthropics/skills.git
+commit: b0cbd3df1533b396d281a6886d5132f623393a9c
+license: mixed (see README + THIRD_PARTY_NOTICES)

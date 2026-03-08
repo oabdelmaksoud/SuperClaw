@@ -1,0 +1,9 @@
+{
+  "upstream_skill_md": 18,
+  "bridge_skills_created": 18,
+  "imported_reference_sets": [
+    "skills",
+    "spec",
+    "template"
+  ]
+}
