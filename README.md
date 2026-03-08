@@ -93,6 +93,23 @@ bash scripts/run-agent-scenarios.sh AGENT_SCENARIO_MATRIX.md
 
 ---
 
+
+## Agent model in SuperClaw
+
+SuperClaw supports agent-style delegation in two OpenClaw-native ways:
+
+1. **Role agents via skills** (`ecc-role-*`)
+   - 16 specialized role skills (planner, architect, security-reviewer, code-reviewer, etc.)
+   - These are the primary OpenClaw-compatible replacement for raw ECC `agents/` files.
+
+2. **Subagent orchestration**
+   - Use OpenClaw subagents for delegated execution runs (spawn -> scoped task -> structured result).
+   - Validated in `SUBAGENT_DELEGATION_TEST_REPORT.md`.
+
+### Why not raw ECC `agents/` as runtime agents?
+
+ECC agent files are harness-specific. In SuperClaw, their behavior is translated into role skills so they work reliably in OpenClaw runtime and tool policy constraints.
+
 ## How compatibility is implemented
 
 SuperClaw follows **behavioral compatibility** rather than byte-for-byte harness cloning.
