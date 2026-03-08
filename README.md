@@ -127,3 +127,17 @@ SuperClaw enforces bridge-skill quality via:
 - `scripts/validate-skill-descriptions.sh`
 - `BRIDGE_ROUTING_REGRESSION.md`
 
+
+## Proactive Subagent Delegation (Default)
+
+SuperClaw is configured to proactively use subagents for complex tasks (without requiring the user to explicitly ask).
+
+Policy file:
+- `SUBAGENT_POLICY.md`
+
+When delegation is used, outputs should include:
+- which subagents were spawned
+- assigned scope per subagent
+- result per subagent
+- merged final outcome
+
