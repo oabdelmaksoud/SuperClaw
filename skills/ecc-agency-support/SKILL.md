@@ -1,19 +1,34 @@
 ---
 name: ecc-agency-support
-description: "Bridge skill for agency-agents support patterns. Use for support operations, incident communication, and customer-facing issue workflows."
+description: "OpenClaw bridge skill for support. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-support
 
-Use support references to improve support quality and response consistency.
+## Purpose
+Apply `support` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `support` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `support` specialization.
 
 ## Workflow
-1. Read relevant files in `references/support/`.
-2. Map to OpenClaw actions (`ecc-cmd-checkpoint`, `ecc-cmd-orchestrate`, `ecc-role-chief-of-staff`).
-3. Produce a clear support action + escalation plan.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Issue summary
-- Response plan
-- Escalation/ownership
-- Follow-up checklist
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

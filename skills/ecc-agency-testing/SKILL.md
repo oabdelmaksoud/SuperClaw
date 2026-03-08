@@ -1,21 +1,34 @@
 ---
 name: ecc-agency-testing
-description: "Bridge skill for agency-agents testing patterns. Use when test strategy, validation depth, or QA workflow hardening is needed."
+description: "OpenClaw bridge skill for testing. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-testing
 
-Use agency-agents testing references to improve validation rigor.
+## Purpose
+Apply `testing` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `testing` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `testing` specialization.
 
 ## Workflow
-1. Read relevant files in `references/testing/`.
-2. Map to OpenClaw checks (`ecc-cmd-verify`, `ecc-cmd-quality-gate`, `ecc-cmd-test-coverage`, `ecc-cmd-e2e`).
-3. Return prioritized testing actions.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Test strategy summary
-- Risk-ranked test actions
-- Pass/fail gates
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
 
-## ECC Parity Notes
-- Adapted from agency-agents testing playbooks into OpenClaw-native verification workflows.
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

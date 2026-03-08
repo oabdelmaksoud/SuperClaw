@@ -1,19 +1,34 @@
 ---
 name: ecc-agency-product
-description: "Bridge skill for agency-agents product patterns. Use for product scoping, prioritization, and roadmap-aligned execution in OpenClaw workflows."
+description: "OpenClaw bridge skill for product. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-product
 
-Use product references to improve planning quality and delivery alignment.
+## Purpose
+Apply `product` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `product` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `product` specialization.
 
 ## Workflow
-1. Read relevant files in `references/product/`.
-2. Map to OpenClaw actions (`ecc-cmd-plan`, `ecc-cmd-projects`, `ecc-cmd-orchestrate`, `ecc-role-planner`).
-3. Return execution-ready product plan.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Product objective
-- Prioritized scope
-- Milestones
-- Risks/assumptions
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

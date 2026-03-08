@@ -1,19 +1,34 @@
 ---
 name: ecc-agency-design
-description: "Bridge skill for agency-agents design patterns. Use for UX/UI planning, design execution, and design-quality checks in OpenClaw workflows."
+description: "OpenClaw bridge skill for design. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-design
 
-Use design references to improve product experience and implementation quality.
+## Purpose
+Apply `design` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `design` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `design` specialization.
 
 ## Workflow
-1. Read relevant files in `references/design/`.
-2. Map guidance into OpenClaw actions (`ecc-frontend-patterns`, `ecc-liquid-glass-design`, `ecc-frontend-slides`, `ecc-cmd-plan`).
-3. Produce a clear design execution brief.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Design goals
-- UX/UI principles
-- Component/flow plan
-- Validation checklist
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

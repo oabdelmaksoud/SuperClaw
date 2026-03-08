@@ -1,21 +1,34 @@
 ---
 name: ecc-agency-engineering
-description: "Bridge skill for agency-agents engineering patterns. Use when engineering process/playbook guidance is needed alongside implementation/verification workflows."
+description: "OpenClaw bridge skill for engineering. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-engineering
 
-Use agency-agents engineering references to strengthen planning and delivery quality.
+## Purpose
+Apply `engineering` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `engineering` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `engineering` specialization.
 
 ## Workflow
-1. Read relevant files in `references/engineering/`.
-2. Map guidance to OpenClaw-native workflows (`ecc-cmd-plan`, `ecc-cmd-verify`, `ecc-cmd-orchestrate`).
-3. Produce concrete action items and verification checks.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Recommended workflow
-- Action checklist
-- Verification plan
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
 
-## ECC Parity Notes
-- Adapted from agency-agents engineering playbooks into OpenClaw workflow style.
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

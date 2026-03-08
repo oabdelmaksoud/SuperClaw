@@ -1,19 +1,34 @@
 ---
 name: ecc-agency-spatial-computing
-description: "Bridge skill for agency-agents spatial-computing patterns. Use for planning and validating spatial/XR workflows with OpenClaw-native execution controls."
+description: "OpenClaw bridge skill for spatial computing. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-spatial-computing
 
-Use spatial-computing references for XR-oriented planning and validation.
+## Purpose
+Apply `spatial computing` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `spatial computing` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `spatial computing` specialization.
 
 ## Workflow
-1. Read relevant files in `references/spatial-computing/`.
-2. Map to OpenClaw actions (`ecc-cmd-plan`, `ecc-cmd-verify`, `ecc-cmd-orchestrate`).
-3. Return a practical implementation + validation plan.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Spatial objective
-- Technical approach
-- Validation checklist
-- Risks/constraints
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

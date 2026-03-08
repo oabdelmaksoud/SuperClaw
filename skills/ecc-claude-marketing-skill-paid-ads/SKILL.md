@@ -1,21 +1,34 @@
 ---
 name: ecc-claude-marketing-skill-paid-ads
-description: "Bridge skill for claude-skills 'marketing-skill/paid-ads'. Use when requests match this specialized domain; adapt guidance to OpenClaw-native tools and verification."
+description: "OpenClaw bridge skill for marketing skill paid ads. Use when tasks match this specialized anthropic skills capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-claude-marketing-skill-paid-ads
 
-Apply the upstream skill intent in OpenClaw-native execution.
+## Purpose
+Apply `marketing skill paid ads` guidance from upstream references in an OpenClaw-native workflow.
 
-## Source
-- `Upstream skill snapshot: upstream-import/claude-skills/references/marketing-skill/paid-ads`
+## Trigger Conditions
+- User request clearly matches `marketing skill paid ads` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `marketing skill paid ads` specialization.
 
 ## Workflow
-1. Read upstream `SKILL.md` in the referenced snapshot.
-2. Translate harness-specific instructions into OpenClaw tool flow.
-3. Execute in small verified steps.
-4. Return concise findings, actions, and validation.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Rules
-- Preserve intent; do not copy unsafe runtime assumptions.
-- Prefer deterministic checks and explicit evidence.
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.

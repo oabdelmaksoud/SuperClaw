@@ -1,19 +1,34 @@
 ---
 name: ecc-agency-strategy
-description: "Bridge skill for agency-agents strategy patterns. Use for strategic framing, market positioning, and decision synthesis in OpenClaw workflows."
+description: "OpenClaw bridge skill for strategy. Use when tasks match this specialized agency-agents capability and need OpenClaw-native execution with explicit verification."
 ---
 
 # ecc-agency-strategy
 
-Use strategy references to improve planning quality and prioritization.
+## Purpose
+Apply `strategy` guidance from upstream references in an OpenClaw-native workflow.
+
+## Trigger Conditions
+- User request clearly matches `strategy` capability.
+- Task benefits from specialized domain guidance plus execution steps.
+
+## When NOT to Use
+- Generic tasks better handled by broader `ecc-cmd-*` workflows.
+- Requests unrelated to `strategy` specialization.
 
 ## Workflow
-1. Read relevant files in `references/strategy/`.
-2. Map guidance into OpenClaw actions (`ecc-strategic-compact`, `ecc-cmd-plan`, `ecc-cmd-orchestrate`).
-3. Return a decision-ready strategy brief.
+1. Read upstream reference snapshot in `references/upstream-path.txt`.
+2. Extract relevant guidance for the current objective.
+3. Translate to OpenClaw tool-backed steps.
+4. Execute incrementally and verify outcomes.
 
-## Output
-- Strategic objective
-- Options and tradeoffs
-- Recommended path
-- Execution checkpoints
+## Output Format
+- Objective
+- Chosen approach
+- Actions executed
+- Verification evidence
+- Risks/next steps
+
+## Guardrails
+- Preserve upstream intent without assuming harness-specific runtime semantics.
+- Prefer deterministic checks and concise, evidence-backed conclusions.
